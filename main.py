@@ -1,21 +1,13 @@
-import random
 import math
+import json
 
-class RandomMap:
-    @classmethod
-    def generate_random_map(cls, n, m):
-        if n <= 0 or m <= 0:
-            return None
-        rand = random.Random()
-        map = {}
-        for i in range(n):
-            key = "liste_{}".format(rand.randint(0, n))
-            lst = []
-            for j in range(m):
-                lst.append(rand.random())
-            map[key] = lst
-        return map
-
+class Readfile:
+    @staticmethod
+    def read_map_from_file(filename):
+        with open(filename, "r") as file:
+            content = file.read()
+            random_map = json.loads(content)
+        return random_map
 class MaxValue:
     @staticmethod
     def find_max_values(map):
@@ -49,10 +41,7 @@ class MeanValue:
 
 class Main:
     def main(args):
-        print("Hello world!")
-
-        random_map = RandomMap.generate_random_map(10001, 20)
-        print(random_map)
+        random_map = Readfile.read_map_from_file("result.txt")
 
         max_value = MaxValue.find_max_values(random_map)
         print(max_value)
