@@ -1,6 +1,5 @@
 import random
 import math
-from collections import defaultdict
 
 class RandomMap:
     @classmethod

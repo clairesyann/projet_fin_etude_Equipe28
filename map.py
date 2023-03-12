@@ -20,6 +20,10 @@ class RandomMap:
     def convert_to_json(random_map):
         return json.dumps(random_map)
 
+    def write_map_to_file(random_map):
+        with open("result.txt", "w") as file:
+            json.dump(random_map, file)
+
 
 class Main:
     def main(args):
@@ -27,6 +31,8 @@ class Main:
 
         json_data = RandomMap.convert_to_json(random_map)
         print(json_data)
+
+        RandomMap.write_map_to_file(random_map)
 
 
 if __name__ == "__main__":
