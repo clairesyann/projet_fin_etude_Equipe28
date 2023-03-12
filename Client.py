@@ -3,7 +3,7 @@ import socket
 def client_program():
     host = "172.16.104.95"
     port = 80  # socket server port number
-    FILE_PATH = '/home/prj/projet_fin_etude_python/main.py'
+    FILE_PATH = '/home/prj/projet_fin_etude_python/calcul.py'
  
     client_socket = socket.socket()  # instantiate
     client_socket.connect((host, port))  # connect to the server
