@@ -11,7 +11,7 @@ def client_program():
     #message = input(" -> ")  # take input
  
     #while message.lower().strip() != 'bye':
-    #    client_socket.send(message.encode())  # send message main.py
+    #    client_socket.send(message.encode())  # send message calcul.py
     #    data = client_socket.recv(1024).decode()  # receive response
     #    print('Received from server: ' + data)  # show in terminal
     #    message = input(" -> ")  # again take input
