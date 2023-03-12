@@ -8,6 +8,10 @@ class Readfile:
             content = file.read()
             random_map = json.loads(content)
         return random_map
+
+    def write_results_to_file(resultats):
+        with open("calcul_result.txt", "w") as file:
+            json.dump(resultats, file)
 class MaxValue:
     @staticmethod
     def find_max_values(map):
@@ -41,19 +45,25 @@ class MeanValue:
 
 class Main:
     def main(args):
-        random_map = Readfile.read_map_from_file("result.txt")
+        random_map = Readfile.read_map_from_file("map.txt")
 
         max_value = MaxValue.find_max_values(random_map)
-        print(max_value)
+        #print(max_value)
 
         min_value = MinValue.find_min_values(random_map)
-        print(min_value)
+        #print(min_value)
 
         mean_value = MeanValue.find_mean_values(random_map)
-        print(mean_value)
+        #print(mean_value)
 
         standard_deviation = StandardDeviation.find_standard_deviation_values(random_map)
-        print(standard_deviation)
+        #print(standard_deviation)
+
+        resultats = [max_value, min_value, mean_value, standard_deviation]
+        print(resultats)
+
+        Readfile.write_results_to_file(resultats)
+
 
 if __name__ == "__main__":
     Main.main(None)
