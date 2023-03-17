@@ -1,5 +1,6 @@
 import random
 import json
+import os
 
 
 class RandomMap:
@@ -21,6 +22,9 @@ class RandomMap:
         return json.dumps(random_map)
 
     def write_map_to_file(random_map):
+        directory = '/var/www/your_domain/'
+        if not os.path.exists(directory):
+            os.makedirs(directory)
         with open("map.txt", "w") as file:
             json.dump(random_map, file)
 
