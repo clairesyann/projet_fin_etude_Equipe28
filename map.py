@@ -9,6 +9,7 @@ class RandomMap:
         if n <= 0 or 0 >= m:
             return None
         rand = random.Random()
+        random.seed(n + m)
         map = {}
         for i in range(n):
             key = "liste_{}".format(rand.randint(0, n))
@@ -31,7 +32,9 @@ class RandomMap:
 
 class Main:
     def main(args):
-        random_map = RandomMap.generate_random_map(10001, 20)
+        n = random.randint(1, 10000)
+        m = random.randint(1, 100)
+        random_map = RandomMap.generate_random_map(n, m)
 
         json_data = RandomMap.convert_to_json(random_map)
         print(json_data)
