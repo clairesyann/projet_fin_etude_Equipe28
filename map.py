@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# a mettre dans /usr/lib/cgi-bin
 #from art import *
 #Art=text2art("",font='block',chr_ignore=True)
 #print('Content-Type: text/plain')
