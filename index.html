@@ -1,0 +1,34 @@
+<!-- /var/www/your_domain/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Generation de la map</title>
+</head>
+<body>
+        <h1>Execution</h1>
+        <p>Cliquez sur le bouton pour executer le programme map.py :</p>
+            <button id="btn-execute">Executer</button>
+
+
+        <h2>Fichier map.txt genere :</h2>
+        <a id="link-download" href="" download="map.txt">Telecharger</a>
+
+
+        <script type="text/javascript">
+                const btnExecute = document.getElementById('btn-execute');
+                const linkDownload = document.getElementById('link-download');
+
+                btnExecute.addEventListener('click', async () => {
+                    try {
+                        const response = await fetch('http://172.16.104.95/cgi-bin/map.py', { method: 'POST' });
+                        const text = await response.text();
+                        const blob = new Blob([text], { type: 'text/plain' });
+                        linkDownload.href = URL.createObjectURL(blob);
+                        linkDownload.style.display = 'block';
+                    } catch (err) {
+                        console.error(err);
+                    }
+                });
+        </script>
+
+</html>
