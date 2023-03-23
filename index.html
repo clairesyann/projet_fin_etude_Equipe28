@@ -39,8 +39,8 @@
 
 
                         const blobMap = new Blob([text2], { type: 'text/plain' });
-                        linkDownload.href = URL.createObjectURL(blobMap);
-                        linkDownload.style.display = 'block';
+                        linkDownloadResult.href = URL.createObjectURL(blobMap);
+                        linkDownloadResult.style.display = 'block';
 
                     } catch (err) {
                         console.error(err);
