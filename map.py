@@ -1,19 +1,19 @@
 #!/usr/bin/python3
-# a mettre dans /usr/lib/cgi-bin
-#from art import *
-#Art=text2art("",font='block',chr_ignore=True)
-#print('Content-Type: text/plain')
-#print(Art)
+
+from art import *
+Art=text2art("",font='block',chr_ignore=True)
+print('Content-Type: text/plain')
+
+
 
 import random
 import json
 import os
 
-
 class RandomMap:
     @classmethod
     def generate_random_map(cls, n, m):
-        if n <= 0 or 0 >= m:
+        if n <= 0 or m <= 0:
             return None
         rand = random.Random()
         random.seed(n + m)
@@ -30,10 +30,10 @@ class RandomMap:
         return json.dumps(random_map)
 
     def write_map_to_file(random_map):
-        directory = '/var/www/your_domain/'
+        directory = "/usr/lib/cgi-bin"
         if not os.path.exists(directory):
             os.makedirs(directory)
-        with open("map.txt", "w") as file:
+        with open(os.path.join(directory,"map.txt"), "w") as file:
             json.dump(random_map, file)
 
 
@@ -44,6 +44,8 @@ class Main:
         random_map = RandomMap.generate_random_map(n, m)
 
         json_data = RandomMap.convert_to_json(random_map)
+        print('Content-Type: text/plain')
+        print('')
         print(json_data)
 
         RandomMap.write_map_to_file(random_map)

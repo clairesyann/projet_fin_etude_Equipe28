@@ -1,4 +1,3 @@
-<!-- /var/www/your_domain/index.html -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,22 +12,41 @@
         <h2>Fichier map.txt genere :</h2>
         <a id="link-download" href="" download="map.txt">Telecharger</a>
 
+        <h2>Fichier calcul_result.txt genere :</h2>
+        <a id="link-download-result" href="" download="calcul_result.txt">Telecharger</a>
 
         <script type="text/javascript">
                 const btnExecute = document.getElementById('btn-execute');
                 const linkDownload = document.getElementById('link-download');
+                const linkDownloadResult = document.getElementById('link-download-result');
 
                 btnExecute.addEventListener('click', async () => {
                     try {
-                        const response = await fetch('http://172.16.104.95/cgi-bin/map.py', { method: 'POST' });
-                        const text = await response.text();
-                        const blob = new Blob([text], { type: 'text/plain' });
+                        const response1 = await fetch('http://172.16.104.95/cgi-bin/map.py', {
+                            method: 'POST'
+                        });
+                        const text1 = await response1.text();
+
+
+                        const response2 = await fetch('http://172.16.104.95/cgi-bin/calcul.py', {
+                                method: 'POST'
+                        });
+                        const text2 = await response2.text();
+
+                        const blob = new Blob([text1], { type: 'text/plain' });
                         linkDownload.href = URL.createObjectURL(blob);
                         linkDownload.style.display = 'block';
+
+
+                        const blobMap = new Blob([text2], { type: 'text/plain' });
+                        linkDownload.href = URL.createObjectURL(blobMap);
+                        linkDownload.style.display = 'block';
+
                     } catch (err) {
                         console.error(err);
                     }
                 });
         </script>
+
 
 </html>

@@ -1,5 +1,13 @@
+#!/usr/bin/python3
+# a mettre dans /usr/lib/cgi-bin
+#from art import *
+#Art=text2art("",font='block',chr_ignore=True)
+#print('Content-Type: text/plain')
+#print(Art)
+
 import math
 import json
+import os
 
 class Readfile:
     @staticmethod
@@ -9,7 +17,13 @@ class Readfile:
             random_map = json.loads(content)
         return random_map
 
+    def convert_to_json(resultats):
+        return json.dumps(resultats)
+
     def write_results_to_file(resultats):
+        directory = '/var/www/your_domain/'
+        if not os.path.exists(directory):
+            os.makedirs(directory)
         with open("calcul_result.txt", "w") as file:
             json.dump(resultats, file)
 class MaxValue:
@@ -61,6 +75,8 @@ class Main:
 
         resultats = [max_value, min_value, mean_value, standard_deviation]
         print(resultats)
+        json_data = Readfile.convert_to_json(resultats)
+        print(json_data)
 
         Readfile.write_results_to_file(resultats)
 
