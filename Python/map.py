@@ -33,7 +33,7 @@ class RandomMap:
         directory = "/usr/lib/cgi-bin"
         if not os.path.exists(directory):
             os.makedirs(directory)
-        with open(os.path.join(directory,"map.txt"), "w") as file:
+        with open(os.path.join(directory, "map.txt"), "w") as file:
             json.dump(random_map, file)
 
 
