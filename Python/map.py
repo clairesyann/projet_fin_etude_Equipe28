@@ -1,3 +1,12 @@
+#!/usr/bin/python3
+
+from art import *
+Art=text2art("",font='block',chr_ignore=True)
+print('Content-Type: text/plain')
+
+
+
+import random
 import json
 import os
 
