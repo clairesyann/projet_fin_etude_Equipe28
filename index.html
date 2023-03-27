@@ -1,47 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <title>Generation de la map</title>
+        <title>Programming Language Benchmarks</title>
 </head>
 <body>
-        <h1>Execution Fichier Python</h1>
-        <p>Cliquez sur le bouton pour executer le programme map.py :</p>
-            <button id="btn-execute">Executer script python</button>
+        <h1>Python</h1>
+        <p>Cliquez sur le bouton pour executer le programme en Python</p>
+            <button id="btn-execute_python">Executer python</button>
+        <p></p>
+        <a id="link-download_python" href="" download="map.txt">map.txt_python</a>
+        <p></p>
+        <a id="link-download-result_python" href="" download="calcul_result.txt">calcul_resul.txt_python</a>
 
 
-        <h2>Fichier map.txt genere via script python :</h2>
-        <a id="link-download" href="" download="map.txt">Telecharger </a>
 
-        <h2>Fichier calcul_result.txt genere via script python :</h2>
-        <a id="link-download-result" href="" download="calcul_result.txt">Telecharger</a>
+        <h1>Java</h1>
+        <p>Cliquez sur le bouton pour executer le programme en Java </p>
+            <button id="btn-execute_java">Executer Java</button>
+
+
+        <p>Fichier map.txt genere :</p>
+        <a id="link-download_java" href="" download="map.txt">Telecharger</a>
+
+        <p>Fichier calcul_result.txt genere :</p>
+        <a id="link-download-result_Java" href="" download="calcul_result.txt">Telecharger</a>
 
         <script type="text/javascript">
-                const btnExecute = document.getElementById('btn-execute');
-                const linkDownload = document.getElementById('link-download');
-                const linkDownloadResult = document.getElementById('link-download-result');
+                const btnExecute = document.getElementById('btn-execute_python');
+                const linkDownload = document.getElementById('link-download_python');
+                const linkDownloadResult = document.getElementById('link-download-result_python');
 
                 btnExecute.addEventListener('click', async () => {
                     try {
-                        const response1 = await fetch('http://172.16.104.95/cgi-bin/map.py', {
-                            method: 'POST'
-                        });
-                        const text1 = await response1.text();
-
-
-                        const response2 = await fetch('http://172.16.104.95/cgi-bin/calcul.py', {
+                        for (let i = 0; i < 100; i++) {
+                                const response1 = await fetch('http://172.16.104.95/cgi-bin/Python/map.py', {
                                 method: 'POST'
-                        });
-                        const text2 = await response2.text();
-
-                        const blob = new Blob([text1], { type: 'text/plain' });
-                        linkDownload.href = URL.createObjectURL(blob);
-                        linkDownload.style.display = 'block';
+                                });
+                                const text1 = await response1.text();
 
 
-                        const blobMap = new Blob([text2], { type: 'text/plain' });
-                        linkDownloadResult.href = URL.createObjectURL(blobMap);
-                        linkDownloadResult.style.display = 'block';
+                                const response2 = await fetch('http://172.16.104.95/cgi-bin/Python/calcul.py', {
+                                        method: 'POST'
+                                });
+                                const text2 = await response2.text();
 
+                                const blob = new Blob([text1], { type: 'text/plain' });
+                                linkDownload.href = URL.createObjectURL(blob);
+                                linkDownload.style.display = 'block';
+
+
+                                const blobMap = new Blob([text2], { type: 'text/plain' });
+                                linkDownloadResult.href = URL.createObjectURL(blobMap);
+                                linkDownloadResult.style.display = 'block';
+                        }
                     } catch (err) {
                         console.error(err);
                     }

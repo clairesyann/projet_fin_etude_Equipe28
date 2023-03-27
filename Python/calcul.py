@@ -73,7 +73,7 @@ class Main:
         map_file = "/usr/lib/cgi-bin/map.txt"
         # Vérifier si le fichier map.txt existe
         if not os.path.isfile(map_file):
-            print("Le fichier map.txt n'existe pas dans /usr/lib/cgi-bin")
+            print("Le fichier map.txt n'existe pas dans /usr/lib/cgi-bin/")
             return
 
         random_map = Readfile.read_map_from_file(map_file)
