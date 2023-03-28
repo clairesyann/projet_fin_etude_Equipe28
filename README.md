@@ -48,6 +48,7 @@ Création du fichier de l'hôte virtuel
 ```sudo nano /etc/apache2/sites-available/your_domain.conf```
 
 Configuration du fichier 
+
 ```
 /etc/apache2/sites-available/your_domain.conf
 <VirtualHost *:80>
@@ -60,13 +61,17 @@ Configuration du fichier
 </VirtualHost>
 ```
 Activer le fichier
+
 ```sudo a2ensite your_domain.conf```
 
 Désactive le site par défaut défini dans 000-default.conf
+
 ```sudo a2dissite 000-default.conf```
 
 Tester la configuration
+
 ```sudo apache2ctl configtest```
 
 Redémarrer le serveur Apache
+
 ```sudo systemctl restart apache2```
