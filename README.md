@@ -72,7 +72,7 @@ Activer le fichier
 
 ```sudo a2ensite your_domain.conf```
 
-Désactive le site par défaut défini dans 000-default.conf
+Désactiver le site par défaut défini dans 000-default.conf
 
 ```sudo a2dissite 000-default.conf```
 
@@ -86,11 +86,40 @@ Redémarrer le serveur Apache
 
 ## Installation de Python 
 
+Mise à jour des paquets
 ```
 sudo apt update
 sudo apt -y upgrade
 ```
-Vérification de la version
+Vérification de la version de Python
 ```
 python3 -V
 ```
+
+## Installation de Java
+
+### Installation du JRE et du JDK par défaut
+
+Mise à jour des paquets
+```
+sudo apt update
+```
+Installation de l’environnement d’exécution Java par défaut (JRE)
+```
+sudo apt install default-jre
+```
+
+Vérification de la version de java
+```
+java -version
+```
+
+Installation du kit de développement Java (JDK) 
+```
+sudo apt install default-jdk
+```
+Vérification de la version du compilateur
+```
+javac -version
+```
+
