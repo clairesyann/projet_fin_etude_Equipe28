@@ -21,7 +21,7 @@ public class Main_calcul {
             writer.write("Mean value: " + mean + "\n");
             writer.write("Standard deviation: " + stdDev + "\n");
             writer.close();
-            System.out.println("Results saved to file " + filename);
+            //System.out.println("Results saved to file " + filename);
         } catch (IOException e) {
             System.out.println("Error saving results to file " + filename + ": " + e.getMessage());
         }
@@ -67,90 +67,5 @@ public class Main_calcul {
             System.out.println("File not found: " + filename);
         }
         return map;
-    }
-}
-
-
-public class MaxValue {
-    public static Double findMaxValues(Map<String, List<Double>> map) {
-        if (map == null || map.isEmpty()) {
-            return null;
-        }
-        double max = Double.MIN_VALUE;
-        for (Map.Entry<String, List<Double>> entry : map.entrySet()) {
-            List<Double> list = entry.getValue();
-            if(list != null && !list.isEmpty()){
-                for(double value : list) {
-                    if(value > max)
-                        max = value;
-                }
-            }
-        }
-        return max;
-    }
-}
-
-
-public class MeanValue {
-    public static Double findMeanValues(Map<String, List<Double>> map) {
-        int count = 0;
-        double sum = 0;
-        for (Map.Entry<String, List<Double>> entry : map.entrySet()) {
-            List<Double> list = entry.getValue();
-            if(list != null && !list.isEmpty()){
-                for(double value : list) {
-                    sum += value;
-                    count++;
-                }
-            }
-        }
-        if(count==0) return null;
-        return sum / count;
-    }
-}
-
-public class MinValue {
-    public static Double findMinValues(Map<String, List<Double>> map) {
-        double min = Double.MAX_VALUE;
-        for (var entry : map.entrySet()) {
-            List<Double> list = entry.getValue();
-            if(list != null && !list.isEmpty()){
-                for(double value : list) {
-                    if(value < min)
-                        min = value;
-                }
-            }
-        }
-        return min;
-    }
-}
-
-
-public class StandardDeviation {
-    public static Double findStandardDeviationValues(Map<String, List<Double>> map) {
-        if(map == null || map.isEmpty()) return null;
-        int count = 0;
-        double sum = 0;
-        for (Map.Entry<String, List<Double>> entry : map.entrySet()) {
-            List<Double> list = entry.getValue();
-            if(list != null && !list.isEmpty()){
-                for(double value : list) {
-                    sum += value;
-                    count++;
-                }
-            }
-        }
-        if(count==0) return null;
-        double mean = sum / count;
-        double temp = 0;
-        for (Map.Entry<String, List<Double>> entry : map.entrySet()) {
-            List<Double> list = entry.getValue();
-            if(list != null && !list.isEmpty()){
-                for(double value : list) {
-                    temp += (mean-value)*(mean-value);
-                }
-            }
-        }
-        return Math.sqrt(temp/(count-1));
     }
 }

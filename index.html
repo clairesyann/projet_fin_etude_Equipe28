@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
         <title>Programming Language Benchmarks</title>
 </head>
@@ -57,7 +57,35 @@
                         console.error(err);
                     }
                 });
+
+
+                const btnExecuteJava = document.getElementById('btn-execute_java');
+                const linkDownloadJava = document.getElementById('link-download_java');
+                const linkDownloadResultJava = document.getElementById('link-download-result_Java');
+
+                btnExecuteJava.addEventListener('click', async () => {
+                  try {
+                    const response1 = await fetch('http://172.16.104.95/cgi-bin/java/script_map.sh', {
+                      method: 'POST'
+                    });
+                    const text1 = await response1.text();
+
+
+                    const blob = new Blob([text1], { type: 'text/plain' });
+                    linkDownloadJava.href = URL.createObjectURL(blob);
+                    linkDownloadJava.style.display = 'block';
+
+                    const blobMap = new Blob([text2], { type: 'text/plain' });
+                    linkDownloadResultJava.href = URL.createObjectURL(blobMap);
+                    linkDownloadResultJava.style.display = 'block';
+
+                  } catch (err) {
+                    console.error(err);
+                  }
+                });
+
+
         </script>
 
-
+</body>
 </html>
