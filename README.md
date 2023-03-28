@@ -7,17 +7,23 @@
 Mis à jour des paquets
 
 
-```sudo apt update```
+```
+sudo apt update
+```
 
 Installation du paquet apache2
 
-```sudo apt install apache2```
+```
+sudo apt install apache2
+```
 
 ### Etape 2 : Réglage du Pare-feu
 
 Autoriser le traffic sur le port 80
 
-```sudo ufw allow 'Apache'```
+```
+sudo ufw allow 'Apache'
+```
 
 ### Etape 3: Serveur Web
 
@@ -29,7 +35,9 @@ Accès au serveur web via le navigateur
 
 Création d'une structure de repertoires
 
-```sudo mkdir /var/www/your_domain```
+```
+sudo mkdir /var/www/your_domain
+```
 
 Attribution de la propriété du répertoire 
 
