@@ -104,6 +104,40 @@ Redémarrer le serveur Apache
 sudo systemctl restart apache2
 ```
 
+### Etape 5 : Installation des CGI
+
+Apache est à configurer pour permettre l'exécution des programmes CGI 
+
+Créer le repertoire CGI d'Apache
+```
+mkdir /usr/lib/cgi-bin
+```
+dans /etc/apache2/httpd.conf, éditez : 
+```
+LoadModule cgid_module modules/mod_cgid.so
+
+<Directory /var/www/html>
+    Header set Access-Control-Allow-Origin "*"
+</Directory>
+
+<Directory "/usr/lib/cgi-bin">
+    SetHandler cgi-script
+    Options +ExecCGI
+    AddHandler cgi-script .cgi .pl .py .java .bsh .shtml .sh .htm .class
+    Require all granted
+    Order allow, deny
+    Allow from all
+</Directory>
+```
+Activez le module  CGID
+```
+a2enmod cgid
+```
+Ajoutez les droits des fichiers
+```
+chmod a+x nomduprogramme.py
+```
+
 ## Installation de Python <img src="https://s2.qwant.com/thumbr/0x380/4/f/14e362337fd8418d4d017885110500c542b96203f0162148d92209aa4a2ec9/1200px-Python-logo-notext.svg.png?u=https%3A%2F%2Fimage.librewiki.net%2Fthumb%2Fc%2Fc3%2FPython-logo-notext.svg%2F1200px-Python-logo-notext.svg.png&q=0&b=1&p=0&a=0" width="30" height="30">
 
 Mise à jour des paquets
