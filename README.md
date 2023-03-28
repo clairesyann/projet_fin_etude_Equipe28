@@ -1,6 +1,8 @@
+![GitHub Language count](https://img.shields.io/github/languages/count/clairesyann/projet_fin_etude_Equipe28?color=green)
+![GitHub language count](https://img.shields.io/static/v1?label=Licence&message=Apache&color=<blueviolet>?style=flat)
 # Projet fin d'études
 
-## Apache Web Server 
+## Apache Web Server <img src="https://s1.qwant.com/thumbr/0x380/8/c/3f469124b8839c4325057de17950250c241700552d43d87fca433e5da4082f/apache-logo-3.png?u=https%3A%2F%2Flogodownload.org%2Fwp-content%2Fuploads%2F2018%2F03%2Fapache-logo-3.png&q=0&b=1&p=0&a=0" width="30" height="30">
 
 ### Etape 1 : Installation d'Apache
 
@@ -29,7 +31,9 @@ sudo ufw allow 'Apache'
 
 Accès au serveur web via le navigateur
 
-```http://server_ip```
+```
+http://server_ip
+```
 
 ### Etape 4: Configuration de l'hôte Virtuel
 
@@ -100,7 +104,7 @@ Redémarrer le serveur Apache
 sudo systemctl restart apache2
 ```
 
-## Installation de Python 
+## Installation de Python <img src="https://s2.qwant.com/thumbr/0x380/4/f/14e362337fd8418d4d017885110500c542b96203f0162148d92209aa4a2ec9/1200px-Python-logo-notext.svg.png?u=https%3A%2F%2Fimage.librewiki.net%2Fthumb%2Fc%2Fc3%2FPython-logo-notext.svg%2F1200px-Python-logo-notext.svg.png&q=0&b=1&p=0&a=0" width="30" height="30">
 
 Mise à jour des paquets
 ```
@@ -112,7 +116,7 @@ Vérification de la version de Python
 python3 -V
 ```
 
-## Installation de Java
+## Installation de Java <img src="https://s2.qwant.com/thumbr/0x380/c/5/824ffc855e4b1882d9e05fc37196a3ed9d6a6f361f0037f540f7e8f3b797ed/java-14-logo-png-transparent.png?u=https%3A%2F%2Fcdn.freebiesupply.com%2Flogos%2Flarge%2F2x%2Fjava-14-logo-png-transparent.png&q=0&b=1&p=0&a=0" width="20" height="30">
 
 ### Installation du JRE et du JDK par défaut
 
