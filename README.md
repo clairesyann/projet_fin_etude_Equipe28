@@ -41,19 +41,27 @@ sudo mkdir /var/www/your_domain
 
 Attribution de la propriété du répertoire 
 
-```sudo chown -R $USER:$USER /var/www/your_domain```
+```
+sudo chown -R $USER:$USER /var/www/your_domain
+```
 
 Permission du propriétaire de lire, d'écrire et d'exécuter les fichiers, tout en n'accordant que des autorisations de lecture et d'exécution aux groupes et aux autres personnes.
 
-```sudo chmod -R 755 /var/www/your_domain```
+```
+sudo chmod -R 755 /var/www/your_domain
+```
 
 Création de la page index.html 
 
-```sudo nano /var/www/your_domain/index.html```
+```
+sudo nano /var/www/your_domain/index.html
+```
 
 Création du fichier de l'hôte virtuel
 
-```sudo nano /etc/apache2/sites-available/your_domain.conf```
+```
+sudo nano /etc/apache2/sites-available/your_domain.conf
+```
 
 Configuration du fichier 
 
@@ -70,19 +78,27 @@ Configuration du fichier
 ```
 Activer le fichier
 
-```sudo a2ensite your_domain.conf```
+```
+sudo a2ensite your_domain.conf
+```
 
 Désactiver le site par défaut défini dans 000-default.conf
 
-```sudo a2dissite 000-default.conf```
+```
+sudo a2dissite 000-default.conf
+```
 
 Tester la configuration
 
-```sudo apache2ctl configtest```
+```
+sudo apache2ctl configtest
+```
 
 Redémarrer le serveur Apache
 
-```sudo systemctl restart apache2```
+```
+sudo systemctl restart apache2
+```
 
 ## Installation de Python 
 
