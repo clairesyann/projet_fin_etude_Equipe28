@@ -83,3 +83,14 @@ Tester la configuration
 Redémarrer le serveur Apache
 
 ```sudo systemctl restart apache2```
+
+## Installation de Python 
+
+```
+sudo apt update
+sudo apt -y upgrade
+```
+Vérification de la version
+```
+python3 -V
+```
