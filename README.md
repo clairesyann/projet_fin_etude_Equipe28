@@ -2,7 +2,7 @@
 
 ## Apache Web Server 
 
-### Etape 1 : Installer Apache
+### Etape 1 : Installation d'Apache
 
 Mis à jour des paquets
 
