@@ -1,5 +1,9 @@
 ![GitHub Language count](https://img.shields.io/github/languages/count/clairesyann/projet_fin_etude_Equipe28?color=green)
 ![GitHub language count](https://img.shields.io/static/v1?label=Licence&message=Apache&color=<blueviolet>?style=flat)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/clairesyann/projet_fin_etude_Equipe28)
+<img alt="GitHub repo file count" src="https://img.shields.io/github/directory-file-count/clairesyann/projet_fin_etude_Equipe28">
+
+
 # Projet fin d'études
 
 ## Apache Web Server <img src="https://s1.qwant.com/thumbr/0x380/8/c/3f469124b8839c4325057de17950250c241700552d43d87fca433e5da4082f/apache-logo-3.png?u=https%3A%2F%2Flogodownload.org%2Fwp-content%2Fuploads%2F2018%2F03%2Fapache-logo-3.png&q=0&b=1&p=0&a=0" width="30" height="30">
